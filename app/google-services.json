@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "843158748892",
+    "project_id": "springchat-68515",
+    "storage_bucket": "springchat-68515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843158748892:android:42c218e83e49cb04413e19",
+        "android_client_info": {
+          "package_name": "com.msiSpringchat.springchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843158748892-iv3q76ckd15tuogs5igjd1mltjl2ou3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHw0bDB0uPYLSkZqVT3LXUwbJN-w59Xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843158748892-iv3q76ckd15tuogs5igjd1mltjl2ou3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

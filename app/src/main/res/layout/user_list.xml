@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+
+
+    android:background="?attr/colorOnPrimary"
+    android:layout_marginBottom="1dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_baseline_person_white_24"
+        app:civ_border_color="#CCCCCC"
+        app:civ_border_width="2dp">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="10dp"
+        android:text="Name"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="14sp"
+        android:textStyle="italic">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/userStatus"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="30dp"
+        android:text="Status"
+        android:maxLines="1"
+        android:textColor="?attr/colorSecondary"
+        android:textSize="12sp"
+        android:textStyle="italic">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/messageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="5dp"
+        android:text="6:12pm"
+        android:textColor="?attr/colorSecondary"
+        android:textSize="10sp"
+        android:textStyle="italic">
+
+    </TextView>
+
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.HomeActivity"
+    android:background="?attr/colorOnPrimary">
+
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SpringChat"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+
+            android:textStyle="italic|bold">
+
+        </TextView>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="51dp"-->
+
+    <!--        android:orientation="horizontal">-->
+
+
+    <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--            android:id="@+id/logout"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:layout_gravity="left"-->
+    <!--            android:layout_marginStart="290dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+
+
+    <!--            android:src="@drawable/ic_baseline_logout_24"-->
+    <!--            app:civ_border_color="#ECEBEB"-->
+    <!--            app:civ_border_width="2dp">-->
+
+    <!--        </de.hdodenhof.circleimageview.CircleImageView>-->
+
+
+    <!--    </LinearLayout>-->
+
+
+    <RelativeLayout
+
+        android:id="@+id/mainlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="?attr/colorOnPrimary">
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="1dp"
+
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/user_list" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
