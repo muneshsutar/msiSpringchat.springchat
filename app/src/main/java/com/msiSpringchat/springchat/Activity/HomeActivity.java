@@ -67,13 +67,14 @@ public class HomeActivity extends AppCompatActivity {
                 users.clear();
                 for (DataSnapshot snapshot1:snapshot.getChildren()){
                     UserHolder user = snapshot1.getValue(UserHolder.class);
+                    shimmerFrameLayout.stopShimmer();
+                    shimmerFrameLayout.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.VISIBLE);
 
 
-                    String uid = firebaseAuth.getUid();
+                    String uid = firebaseAuth.getCurrentUser().getUid();
                     if(!user.getUid().equals(uid))
-                        shimmerFrameLayout.stopShimmer();
-                        shimmerFrameLayout.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
+
                         users.add(user);
 
 
