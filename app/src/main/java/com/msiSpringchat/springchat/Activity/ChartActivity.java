@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ import java.util.HashMap;
 public class ChartActivity extends AppCompatActivity {
 
     TextView cuUsserName,userstatus;
+
+    LinearLayout gotoCuserProfile;
 
     MessageAdapter adapter;
     ArrayList<Message> messages;
@@ -58,6 +61,8 @@ public class ChartActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         profile = findViewById(R.id.profile);
 
+        gotoCuserProfile = findViewById(R.id.gotoCuserProfile);
+
 
         sendBtn = findViewById(R.id.sendBtn);
 
@@ -70,6 +75,9 @@ public class ChartActivity extends AppCompatActivity {
 
 
         messages = new ArrayList<>();
+
+
+
 
 
 
@@ -111,6 +119,23 @@ public class ChartActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        gotoCuserProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(),CuserActivity.class);
+
+
+
+                intent.putExtra("Photo", profiles);
+                intent.putExtra("name",name);
+
+
+                startActivity(intent);
 
             }
         });

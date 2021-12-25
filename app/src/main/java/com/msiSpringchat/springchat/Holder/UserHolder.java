@@ -5,12 +5,9 @@ public class UserHolder {
     String name,piMage,barthDate,gender,uid;
     String status;
 
+
     public UserHolder(){
 
-    }
-
-    public UserHolder(String status) {
-        this.status = status;
     }
 
     public String getStatus() {
@@ -21,12 +18,18 @@ public class UserHolder {
         this.status = status;
     }
 
+    public UserHolder(String status) {
+        this.status = status;
+    }
+
     public UserHolder(String name, String piMage, String barthDate, String gender, String uid) {
         this.name = name;
         this.piMage = piMage;
         this.barthDate = barthDate;
         this.gender = gender;
         this.uid = uid;
+
+
     }
 
     public String getName() {
@@ -68,4 +71,7 @@ public class UserHolder {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+
+
 }

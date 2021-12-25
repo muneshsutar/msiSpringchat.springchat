@@ -124,4 +124,5 @@
     <color name="RoyalBlue">#4169E1</color>
     <color name="Turquoise">#40E0D0</color>
     <color name="MediumSeaGreen">#3CB371</color>
+    <color name="shimmerColor">#C2C2C2</color>
 </resources>

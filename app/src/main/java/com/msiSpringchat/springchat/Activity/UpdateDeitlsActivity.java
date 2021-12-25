@@ -70,6 +70,8 @@ public class UpdateDeitlsActivity extends AppCompatActivity {
         firebaseDatabase  = FirebaseDatabase.getInstance();
 
 
+
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,43 +153,70 @@ public class UpdateDeitlsActivity extends AppCompatActivity {
 
     private void addinintofirebase() {
 
-        final ProgressDialog dialog=new ProgressDialog(this);
-        dialog.setTitle("File Uploading...");
-        dialog.show();
+
+        String uName = name.getText().toString();
+        String uGender = gender.getText().toString();
+        String uDateBarth = barthDate.getText().toString();
+
+        if (!uName.isEmpty()){
+            if (!uDateBarth.isEmpty()){
+                if (!uGender.isEmpty()){
+
+                    final ProgressDialog dialog=new ProgressDialog(this);
+                    dialog.setTitle("File Uploading...");
+                    dialog.show();
 
 
 
-        DatabaseReference databaseReference=firebaseDatabase.getReference("users");
-        FirebaseStorage storage= FirebaseStorage.getInstance();
-        final StorageReference uploader=storage.getReference().child("Profiles").child(firebaseAuth.getUid());
+                    DatabaseReference databaseReference=firebaseDatabase.getReference("users");
+                    FirebaseStorage storage= FirebaseStorage.getInstance();
+                    final StorageReference uploader=storage.getReference().child("Profiles").child(firebaseAuth.getUid());
 
 
-        uploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String uid = firebaseAuth.getUid();
-                        FirebaseUser firebaseUser  = firebaseAuth.getCurrentUser();
+                    uploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String uid = firebaseAuth.getUid();
+                                    FirebaseUser firebaseUser  = firebaseAuth.getCurrentUser();
 
-                        UserHolder userHolder = new UserHolder(name.getText().toString(),uri.toString(),barthDate.getText().toString(),gender.getText().toString(),uid);
-                        databaseReference.child(firebaseUser.getUid()).setValue(userHolder);
-                        Intent gotohomei = new Intent(UpdateDeitlsActivity.this,HomeActivity.class);
-                        startActivity(gotohomei);
-                        finish();
+                                    UserHolder userHolder = new UserHolder(uName,uri.toString(),uDateBarth,uGender,uid);
+                                    databaseReference.child(firebaseUser.getUid()).setValue(userHolder);
+                                    Intent gotohomei = new Intent(UpdateDeitlsActivity.this,HomeActivity.class);
 
-                    }
-                });
+                                    startActivity(gotohomei);
+                                    finish();
+
+                                }
+                            });
+                        }
+                    }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                            float percent=(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+                            dialog.setMessage("Uploaded :"+(int)percent+" %");
+
+                        }
+                    });
+
+                }else {
+
+                    gender.setError("Please Update Your Details");
+
+                }
+            }else {
+                barthDate.setError("Please Update Your Details");
+
+
             }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                float percent=(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
-                dialog.setMessage("Uploaded :"+(int)percent+" %");
 
-            }
-        });
+        }else {
+            name.setError("Please Update Your Details");
+
+        }
+
 
 
     }

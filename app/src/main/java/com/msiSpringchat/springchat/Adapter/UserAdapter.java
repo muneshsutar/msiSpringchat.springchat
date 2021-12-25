@@ -70,7 +70,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsersViewHolde
 
 
                         } else {
-                            holder.messageTime.setText("01:01am");
+                            holder.messageTime.setText("00:00");
                             holder.userStatus.setText("Tap to chat");
                         }
                     }
@@ -92,6 +92,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsersViewHolde
                 intent.putExtra("name", user.getName());
                 intent.putExtra("uid", user.getUid());
                 intent.putExtra("image", user.getPiMage());
+
 
 
                 context.startActivity(intent);

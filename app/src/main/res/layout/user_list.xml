@@ -13,13 +13,14 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImg"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
 
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+
         android:src="@drawable/ic_baseline_person_white_24"
         app:civ_border_color="#CCCCCC"
         app:civ_border_width="2dp">
@@ -35,7 +36,7 @@
         android:layout_marginTop="10dp"
         android:text="Name"
         android:textColor="?attr/colorOnSecondary"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="italic">
 
     </TextView>
@@ -46,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
         android:layout_marginTop="30dp"
-        android:text="Status"
         android:maxLines="1"
+        android:text="Status"
         android:textColor="?attr/colorSecondary"
         android:textSize="12sp"
         android:textStyle="italic">
@@ -61,9 +62,10 @@
 
         android:layout_marginStart="300dp"
         android:layout_marginTop="5dp"
-        android:text="6:12pm"
+        android:text="00:00"
+
         android:textColor="?attr/colorSecondary"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:textStyle="italic">
 
     </TextView>

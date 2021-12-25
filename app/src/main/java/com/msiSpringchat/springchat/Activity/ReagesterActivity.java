@@ -80,7 +80,9 @@ public class ReagesterActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Registration Successfully, Please Update Your Details ", Toast.LENGTH_SHORT).show();
                                     RegProgressbar.setVisibility(View.GONE);
                                     Intent userreagestrationi = new Intent(ReagesterActivity.this,UpdateDeitlsActivity.class);
+
                                     startActivity(userreagestrationi);
+
                                     finish();
 
                                 }else {
