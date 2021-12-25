@@ -8,6 +8,15 @@
     tools:context=".MainActivity"
     android:background="?attr/colorPrimary">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:src="@mipmap/ic_launcher">
+
+    </ImageView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -123,22 +123,22 @@ public class ChartActivity extends AppCompatActivity {
             }
         });
 
-        gotoCuserProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(),CuserActivity.class);
-
-
-
-                intent.putExtra("Photo", profiles);
-                intent.putExtra("name",name);
-
-
-                startActivity(intent);
-
-            }
-        });
+//        gotoCuserProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(getApplicationContext(),CuserActivity.class);
+//
+//
+//
+//                intent.putExtra("Photo", profiles);
+//                intent.putExtra("name",name);
+//
+//
+//                startActivity(intent);
+//
+//            }
+//        });
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
