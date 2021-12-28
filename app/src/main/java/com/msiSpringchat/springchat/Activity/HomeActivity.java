@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView cuUserName;
     androidx.appcompat.widget.Toolbar toolbar;
 
+
     RecyclerView recyclerView;
     ShimmerFrameLayout shimmerFrameLayout;
 
@@ -46,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
         shimmerFrameLayout = findViewById(R.id.Shimmer);
         shimmerFrameLayout.startShimmer();
+
 //        toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -73,7 +77,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
                     String uid = firebaseAuth.getCurrentUser().getUid();
+
                     if(!user.getUid().equals(uid))
+
 
                         users.add(user);
 
@@ -93,6 +99,11 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

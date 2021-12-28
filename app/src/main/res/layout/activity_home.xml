@@ -28,36 +28,17 @@
 
         </TextView>
 
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/cprofile"-->
+<!--            android:layout_width="42dp"-->
+<!--            android:layout_height="42dp"-->
+
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:src="@drawable/btn_video_normal" />-->
+
 
     </androidx.appcompat.widget.Toolbar>
-
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_marginTop="51dp"-->
-
-    <!--        android:orientation="horizontal">-->
-
-
-    <!--        <de.hdodenhof.circleimageview.CircleImageView-->
-    <!--            android:id="@+id/logout"-->
-    <!--            android:layout_width="40dp"-->
-    <!--            android:layout_height="50dp"-->
-    <!--            android:layout_gravity="left"-->
-    <!--            android:layout_marginStart="290dp"-->
-    <!--            android:layout_marginTop="10dp"-->
-
-
-    <!--            android:src="@drawable/ic_baseline_logout_24"-->
-    <!--            app:civ_border_color="#ECEBEB"-->
-    <!--            app:civ_border_width="2dp">-->
-
-    <!--        </de.hdodenhof.circleimageview.CircleImageView>-->
-
-
-    <!--    </LinearLayout>-->
-
-
     <RelativeLayout
 
         android:id="@+id/mainlayout"

@@ -1,13 +1,23 @@
 package com.msiSpringchat.springchat.Holder;
 
+import android.graphics.Bitmap;
+
 public class UserHolder {
 
-    String name,piMage,barthDate,gender,uid;
+    String name,piMage,barthDate,gender,uid,tokon;
     String status;
 
 
     public UserHolder(){
 
+    }
+
+    public String getTokon() {
+        return tokon;
+    }
+
+    public void setTokon(String tokon) {
+        this.tokon = tokon;
     }
 
     public String getStatus() {
@@ -39,6 +49,7 @@ public class UserHolder {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getPiMage() {
         return piMage;

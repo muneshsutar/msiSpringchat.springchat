@@ -2,14 +2,18 @@ package com.msiSpringchat.springchat.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.msiSpringchat.springchat.Holder.Message;
 import com.msiSpringchat.springchat.R;
 
@@ -20,12 +24,14 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
     Context context;
     ArrayList<Message> messages;
+
     final int ITEM_SENT = 1;
     final int ITEM_RECEIVE = 2;
 
     public MessageAdapter(Context context, ArrayList<Message> messages, String senderRoom, String receiverRoom) {
         this.context = context;
         this.messages = messages;
+
 
     }
 
@@ -59,6 +65,7 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
         }
 
+
     }
 
     @Override
@@ -79,23 +86,28 @@ public class MessageAdapter extends RecyclerView.Adapter {
     public class SendViewHolder extends  RecyclerView.ViewHolder{
 
         TextView message;
-        TextView timeofmessage;
+
 
         public SendViewHolder(@NonNull View itemView) {
             super(itemView);
             message = itemView.findViewById(R.id.message);
-            timeofmessage=itemView.findViewById(R.id.timeofmessage);
+
+
         }
     }
 
     public class RecevViewHolder extends  RecyclerView.ViewHolder{
         TextView message;
-        TextView timeofmessage;
+
 
         public RecevViewHolder(@NonNull View itemView) {
             super(itemView);
             message = itemView.findViewById(R.id.message);
-            timeofmessage=itemView.findViewById(R.id.timeofmessage);
+
+
+
+
+
         }
     }
 }

@@ -95,6 +95,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsersViewHolde
 
 
 
+
+
                 context.startActivity(intent);
             }
         });

@@ -123,26 +123,27 @@ public class ChartActivity extends AppCompatActivity {
             }
         });
 
-//        gotoCuserProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(getApplicationContext(),CuserActivity.class);
-//
-//
-//
-//                intent.putExtra("Photo", profiles);
-//                intent.putExtra("name",name);
-//
-//
-//                startActivity(intent);
-//
-//            }
-//        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(),CuserActivity.class);
+
+
+
+                intent.putExtra("Photo", profiles);
+                intent.putExtra("name",name);
+
+
+                startActivity(intent);
+
+            }
+        });
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 String messageTxt = messageBox.getText().toString();
                 Date date = new Date();
@@ -171,6 +172,7 @@ public class ChartActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void unused) {
 
+
                                 }
                             });
 
@@ -195,6 +197,7 @@ public class ChartActivity extends AppCompatActivity {
                         for(DataSnapshot snapshot1 : snapshot.getChildren()) {
                             Message message = snapshot1.getValue(Message.class);
                             message.setMessageId(snapshot1.getKey());
+                            recyclerView.smoothScrollToPosition(recyclerView.getAdapter().getItemCount());
                             messages.add(message);
 
                         }
@@ -207,6 +210,9 @@ public class ChartActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+
 
 
 
